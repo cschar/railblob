@@ -2,7 +2,8 @@ require 'test_helper'
 
 class MicropostsControllerTest < ActionDispatch::IntegrationTest
   setup do
-    u = User.new()
+    u = User.new(email:'bob@bob.com', name: 'bob',
+                 password: "foobar", password_confirmation: "foobar")
     u.save()
     @micropost = microposts(:one)
     @micropost.content = 'hello'
