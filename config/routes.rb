@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
-  get 'static_pages/home'
+  root 'static_pages#home'
+  get  '/help',    to: 'static_pages#help'
+  get  '/about',   to: 'static_pages#about'
+  get  '/contact', to: 'static_pages#contact'
 
-  get 'static_pages/help'
 
   resources :microposts
   resources :users
   get 'welcome/index'
-  root 'application#hello'
+
 
 
   get 'welcome/show'
