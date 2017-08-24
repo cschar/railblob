@@ -1,5 +1,5 @@
 
-require 'pry'
+# require 'pry'
 
 class UsersController < ApplicationController
 
