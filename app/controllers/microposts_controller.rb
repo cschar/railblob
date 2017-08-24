@@ -25,12 +25,22 @@ class MicropostsController < ApplicationController
   # POST /microposts.json
   def create
     @micropost = Micropost.new(micropost_params)
+    puts "WORKED"
+    puts @micropost.content
+    puts @micropost.user_id
 
     respond_to do |format|
+      begin
+        result = @micropost.save!
+      rescue Exception => e
+        puts e.message
+      end
       if @micropost.save
+        puts "SAVED"
         format.html { redirect_to @micropost, notice: 'Micropost was successfully created.' }
         format.json { render :show, status: :created, location: @micropost }
       else
+        puts "NOT SAVED"
         format.html { render :new }
         format.json { render json: @micropost.errors, status: :unprocessable_entity }
       end
