@@ -11,8 +11,12 @@ class UsersController < ApplicationController
     def create
       @user = User.new(user_params())
       if @user.save
+        # from session_helper included in application controller
+        log_in @user
+
         #rails flash variable hangs around to pass text into view
         flash[:success] = "Welcome to the Sample App!"
+
         redirect_to user_url(@user)
         # redirect_to @user
       else

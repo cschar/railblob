@@ -21,24 +21,55 @@ puts mydict[:name]
 $global_var = 32
 
 class TestClass
-	@@local_var = 14
+	@@class_var = 14
 
 	def initialize
-		@local_var = 20
-	end	
+		@instance_var = 20
+	end
+
+	def TestClass.ho
+		puts 'class method ho called'
+	end
 
 	def test
 		local_var = 7
 		$global_var += 1
-		@@local_var += 1
-		@local_var += 1
+		@@class_var += 1
+		@instance_var += 1
 		local_var += 1
 		puts "$global_var=#{$global_var}"
-		puts "@@local_var=#{@@local_var}"
-		puts "@local_var=#{@local_var}"
+		puts "@@class_var=#{@@class_var}"
+		puts "@instance_var=#{@instance_var}"
 		puts "local_var=#{local_var}"
 	end
 end
 
 v = TestClass.new
 v.test
+TestClass.ho
+
+class InstanceAsLocal
+	def initialize
+		@instance = 230
+	end
+	def m2
+		@instance
+	end
+	def test
+		puts m2  # print out 230
+	end
+
+	def test_or
+		noo = nil
+		noo ||= 20
+		puts noo
+
+		noo = 200
+		noo ||= 20
+		puts noo
+	end
+end
+
+c = InstanceAsLocal.new
+c.test
+c.test_or

@@ -10,6 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+
+// jquery before boostrap so it has js to work with
+//= require jquery
+//= require jquery_ujs
+//= require bootstrap
+
+
 //= require rails-ujs
 //= require turbolinks
 //= require_tree .
+
+
+

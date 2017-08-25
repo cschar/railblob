@@ -11,5 +11,16 @@ class ActiveSupport::TestCase
   include ApplicationHelper
 
 
-  # Add more helper methods to be used by all tests here...
+  # Helper methods e.g. session_helper imported in base application controller
+  # are not available in tests, we make another method
+  # to imitate session_helper.rb:logged_in
+
+  # Returns true if a test user is logged in.
+  def is_logged_in?
+
+    #session set in session_helper:log_in
+    # during controller execution flow
+    !session[:user_id].nil?
+  end
+
 end
