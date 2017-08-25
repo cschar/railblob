@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       log_in user
       params[:session][:remember_me] == '1' ? remember(user) : forget(user)
 
-      redirect_to user_url(user)
+      redirect_back_or user
 
     else
       # Unlike the contents of flash, the contents of flash.now disappear as soon as there is an additional request,

@@ -14,7 +14,8 @@ class User < ApplicationRecord
 
   validates :password,
             presence: true,
-            length: { minimum: 6 }
+            length: { minimum: 6 },
+            allow_nil: true
 
   #The only requirement for has_secure_password to work its magic
   # is for the corresponding model to have an attribute called
