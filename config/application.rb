@@ -16,3 +16,6 @@ module FrisbeeRails
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
+# set per_page globally
+WillPaginate.per_page = 5

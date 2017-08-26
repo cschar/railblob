@@ -6,6 +6,9 @@
 
 # Ignore bundler config.
 /.bundle
+*.py
+__pycache__
+/public/uploads
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

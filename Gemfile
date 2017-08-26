@@ -32,9 +32,17 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap-sass', '3.3.7'
 gem 'bcrypt',         '3.1.11'
+# test data generation
 gem 'faker',          '1.7.3'
+
+# image uploading
+gem 'carrierwave',             '1.1.0'
+# image resizing
+gem 'mini_magick',             '4.7.0'
+gem 'fog',                     '1.40.0'
 gem 'will_paginate',           '3.1.5'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem 'jquery-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -47,7 +55,6 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
 
-  gem 'jquery-rails'
 end
 
 group :development do

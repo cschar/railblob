@@ -73,3 +73,10 @@ end
 c = InstanceAsLocal.new
 c.test
 c.test_or
+
+
+
+
+#stabby lambda
+-> { puts "foo" }
+-> { puts "foo" }.call
