@@ -13,11 +13,10 @@
 
 // jquery before boostrap so it has js to work with
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 //= require bootstrap
 
 
-//= require rails-ujs
 //= require turbolinks
 //= require_tree .
 
