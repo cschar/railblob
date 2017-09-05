@@ -1,5 +1,12 @@
 web:
-  build: .
+  env_file:
+    - web.env
+  build: 
+    context: .
+    args:
+      S3_SECRET_KEY: ${S3_skey}
+      S3_ACCESS_KEY: ${S3_akey}
+      S3_BUCKET: ${S3_bucket}
   command: 'bash -c ''bundle exec puma -C config/puma.rb'''
   working_dir: /app/user
   environment:
